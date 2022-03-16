@@ -1,0 +1,28 @@
+{
+    "name": "china-lishuo/search",
+    "description": "Search by various search engines",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "lishuo\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "china-li-shuo",
+            "email": "676050059@qq.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "keywords": [
+        "php",
+        "elasticsearch",
+        "xunsearch",
+        "sphinx"
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "elasticsearch/elasticsearch": "^7.17"
+    }
+}
