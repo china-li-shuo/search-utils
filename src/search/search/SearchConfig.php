@@ -14,56 +14,59 @@ use lishuo\search\exception\ConfigException;
 class SearchConfig
 {
 
-    private $appId;
+    private $ip;
 
-    private $appKey;
+    private $port;
 
-    private $region;
+    private $shards;
+
+    private $replicas;
 
 
     /**
-     * SearchConfig constructor.
-     * @param string $appId 云 API 密钥，请到相应云存储平台的控制台获取
-     * 腾讯云为SecretId
-     * 阿里云为AccessKeyId
-     * 七牛云为AccessKeY
-     *
-     * @param string $appKey 云 API 密钥，请到相应云存储平台的控制台获取
-     * 腾讯云为SecretKey
-     * 阿里云为AccessKeySecret
-     * 七牛云为SecretKey
-     *
-     * @param string $region 存储区域
+     * @param string $ip 连接ip
+     * @param string $port 端口号
+     * @param string $shards 分片
+     * @param string $replicas 分区
      */
-    public function __construct(string $appId, string $appKey, string $region)
+    public function __construct(string $ip, string $port, $shards = 5, $replicas = 1)
     {
-        $this->appId = $appId;
-        $this->appKey = $appKey;
-        $this->region = $region;
+        $this->ip = $ip;
+        $this->port = $port;
+        $this->shards = $shards;
+        $this->replicas = $replicas;
     }
 
     /**
      * @return string
      */
-    public function getAppId(): string
+    public function getIp(): string
     {
-        return $this->appId;
+        return $this->ip;
     }
 
     /**
      * @return string
      */
-    public function getAppKey(): string
+    public function getPort(): string
     {
-        return $this->appKey;
+        return $this->port;
     }
 
     /**
      * @return string
      */
-    public function getRegion(): string
+    public function getShards(): string
     {
-        return $this->region;
+        return $this->shards;
+    }
+
+    /**
+     * @return string
+     */
+    public function getReplicas(): string
+    {
+        return $this->replicas;
     }
 
     /**
